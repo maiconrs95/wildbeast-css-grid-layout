@@ -1,3 +1,7 @@
+/*************************
+* RESET
+*************************/
+
 body, p, h1, ul, li, blockquote {
   padding: 0;
   margin: 0;
@@ -15,11 +19,9 @@ a {
   text-decoration: none;
 }
 
-img {
-  max-width: 100px;
-}
-
-/* GLOBAL GRID */
+/*************************
+* GRID
+*************************/
 .estrutura {
   min-height: 100vh;
   display: grid;
@@ -31,21 +33,77 @@ img {
   ;
 }
 
+/*************************
+* HEADER
+*************************/
+
 header {
   grid-area: header;
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+  padding: 30px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
 }
+
+.logo {
+  max-width: 200px;
+}
+
+.header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header nav a {
+  display: block;
+  padding: 10px;
+  color: white;
+  font-size: 1.125em;
+  background: rgba(0, 0, 0, .1);
+  transition: background .055s ease-in;
+  border-radius: 5px;
+}
+
+.header nav a:hover {
+  background: rgba(0, 0, 0, .5);
+}
+
+.header nav ul li + li {
+  margin-left: 30px;
+}
+
+/*************************
+* SIDENAV
+*************************/
 
 .sidenav {
   grid-area: sidenav;
 }
 
+
+/*************************
+* CONTENT
+*************************/
+
 .content {
   grid-area: content;
 }
 
+
+/*************************
+* ANUNCIOS
+*************************/
+
 .anuncios {
   grid-area: anuncios;
 }
+
+
+/*************************
+* FOOTER
+*************************/
 
 .footer {
   grid-area: footer;
