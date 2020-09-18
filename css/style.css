@@ -44,6 +44,9 @@ img {
 *************************/
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   grid-area: header;
   background: linear-gradient(135deg, #8844ee, #B07DFB);
   padding: 30px;
@@ -111,6 +114,7 @@ header {
 *************************/
 
 .content {
+  position: relative;
   grid-area: content;
   max-width: 900px;
   margin: 0 auto;
@@ -192,6 +196,43 @@ header {
   padding: 5px 0;
   position: relative;
   top: 2px;
+}
+
+.content p.destaque {
+  font-size: 0.875em;
+  color: #B07DFB;
+  max-width: 16em;
+}
+
+.content .atributos {
+  align-self: start;
+}
+
+.content .citacao, .atributos {
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(4, 4, 4, 0.15);
+  background: linear-gradient(135deg, #8844ee, #B07DfB);
+}
+
+.content .citacao  p {
+  color: white;
+  font-size:  1.5em;
+  font-style: italic;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.content .atributos  li {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.125em;
+  padding: 15px;
+}
+
+.content .atributos li + li {
+  border-top: 2px solid #B07DfB;
 }
 
 
