@@ -33,6 +33,12 @@ a {
   ;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
 /*************************
 * HEADER
 *************************/
@@ -80,8 +86,25 @@ header {
 
 .sidenav {
   grid-area: sidenav;
+  background-color: #FAFBFC;
+  padding: 30px;
 }
 
+.sidenav li a {
+  display: block;
+  min-width: 60px;
+  max-width: 100px;
+  margin: 0 auto 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  transition: background .055s ease-out;
+  box-shadow: 5px 5px 15px 0px rgba(4, 4, 4, 0.15);
+}
+
+.sidenav li a:hover {
+  background: #B07DFB;
+}
 
 /*************************
 * CONTENT
@@ -91,15 +114,18 @@ header {
   grid-area: content;
 }
 
-
 /*************************
 * ANUNCIOS
 *************************/
 
 .anuncios {
   grid-area: anuncios;
+  background-color: #FAFBFC;
+  display: grid;
+  align-content: start;
+  padding: 30px;
+  gap: 30px;
 }
-
 
 /*************************
 * FOOTER
@@ -107,4 +133,11 @@ header {
 
 .footer {
   grid-area: footer;
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+}
+
+.footer p {
+  color: white;
+  text-align: center;
+  padding: 30px;
 }
