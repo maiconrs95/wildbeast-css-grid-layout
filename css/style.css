@@ -33,6 +33,30 @@ a {
   ;
 }
 
+@media (max-width: 1200px) {
+  .estrutura {
+    grid-template-columns: initial;
+    grid-template-areas:
+      "header  header header"
+      "sidenav content content"
+      "sidenav anuncios anuncios"
+      "footer  footer footer"
+    ;
+  }
+}
+
+@media (max-width: 760px) {
+  .estrutura {
+    grid-template-areas:
+      "header"
+      "sidenav"
+      "content"
+      "anuncios"
+      "footer"
+    ;
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
