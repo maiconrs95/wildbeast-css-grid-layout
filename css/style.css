@@ -22,6 +22,7 @@ a {
 /*************************
 * GRID
 *************************/
+
 .estrutura {
   min-height: 100vh;
   display: grid;
@@ -45,6 +46,12 @@ a {
   }
 }
 
+img {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
 @media (max-width: 760px) {
   .estrutura {
     grid-template-areas:
@@ -57,17 +64,11 @@ a {
   }
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  border-radius: 5px;
-}
-
 /*************************
 * HEADER
 *************************/
 
-header {
+.header {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -107,6 +108,24 @@ header {
   margin-left: 30px;
 }
 
+@media (max-width: 760px) {
+  .header {
+    grid-template-columns: initial;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .header nav a {
+    font-size: 1em;
+  }
+
+  .header nav ul li + li {
+    margin-left: 10px;
+  }
+}
+
 /*************************
 * SIDENAV
 *************************/
@@ -133,6 +152,46 @@ header {
   background: #B07DFB;
 }
 
+@media (max-width: 760px) {
+  @keyframes seta {
+    from {
+      right: 30px;
+    }
+
+    to {
+      right: 20px;
+    }
+  }
+
+  .sidenav {
+    position: relative;
+    padding: 0 30px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidenav::after {
+    content: '→';
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, .3);
+    animation: seta .5s ease-in 0s infinite alternate;
+  }
+
+  .sidenav ul {
+    display: flex;
+  }
+
+  .sidenav li {
+    flex: 1 0 60px;
+  }
+
+  .sidenav li a {
+    margin: 30px 30px 30px 0;
+  }
+}
+
 /*************************
 * CONTENT
 *************************/
@@ -147,6 +206,12 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+
+@media (max-width: 600px) {
+  .content{
+    grid-template-columns: auto;
+  }
 }
 
 .content .col-wide {
@@ -259,7 +324,6 @@ header {
   border-top: 2px solid #B07DfB;
 }
 
-
 /*************************
 * ANUNCIOS
 *************************/
@@ -271,6 +335,7 @@ header {
   align-content: start;
   padding: 30px;
   gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 /*************************
